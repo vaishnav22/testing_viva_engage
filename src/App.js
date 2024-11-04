@@ -71,6 +71,8 @@ const App = () => {
     <div className="App">
       {accounts.length > 0 ? (
         <div className="content-box">
+          <h3>Send message to Viva Enagage</h3>
+          <h4>Please ignore the textfield using same state</h4>
           <button className="logout-button" onClick={handleLogout}>Logout</button>
           {loading ? (
             <p className="loading-text">Loading groups...</p>
@@ -101,6 +103,7 @@ const App = () => {
         </div>
       ) : (
         <div className="content-box">
+          <h3>Welcome to Viva Enagage</h3>
           <button className="login-button" onClick={handleLogin}>Login</button>
         </div>
       )}
