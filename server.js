@@ -1,11 +1,19 @@
 const express = require('express');
 const axios = require('axios');
 const bodyParser = require('body-parser');
+const compression = require('compression');
+const helmet = require('helmet');
+const path = require('path');
+
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
+
+// Add compression and helmet middleware
+app.use(compression());
+app.use(helmet());
 
 // CORS middleware
 app.use((req, res, next) => {
@@ -20,6 +28,9 @@ app.use((req, res, next) => {
   
   next();
 });
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'public/build')));
 
 // Endpoint to fetch Yammer groups
 app.get('/yammer/groups', (req, res) => {
@@ -62,6 +73,11 @@ app.post('/yammer/post', (req, res) => {
     console.error(error);
     res.status(500).send('Error posting message');
   });
+});
+
+// Serve index.html for all unknown routes (SPA routing)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/build', 'index.html'));
 });
 
 app.listen(PORT, () => {
