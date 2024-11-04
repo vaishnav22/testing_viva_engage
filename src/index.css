@@ -11,3 +11,107 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Center the main box */
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f2f5;
+}
+
+/* Styling for the content box */
+.content-box {
+  width: 90%;
+  max-width: 500px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+}
+
+/* Loading text style */
+.loading-text {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Logout button style */
+.logout-button {
+  background-color: #ff4757;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* Login button style */
+.login-button {
+  background-color: #1e90ff;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Group list styling */
+.group-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Group item styling */
+.group-item {
+  display: flex;
+  align-items: center;
+  margin: 12px 0;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Group information styling */
+.group-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Group name styling */
+.group-name {
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 12px;
+  color: #333;
+}
+
+/* Message input styling */
+.message-input {
+  flex: 1;
+  padding: 8px;
+  margin-right: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* Post button styling */
+.post-button {
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
